@@ -38,6 +38,7 @@ def login():
 
 @bp.route('/api/v1/test', methods=["GET"])
 def test_endpoint():
-    response = make_response("'test': 'yep'", 200)
+    response_json = {"test": "yep"}
+    response = make_response(response_json, 200)
     response.headers["Content-Type"] = "application/json"
     return response
